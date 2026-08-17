@@ -35,8 +35,10 @@ function NeuralMesh({ quality }: { quality: number }) {
     const positions: number[] = [];
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
-        if (nodes[i].distanceTo(nodes[j]) < 1.15) {
-          positions.push(...nodes[i].toArray(), ...nodes[j].toArray());
+        const a = nodes[i];
+        const b = nodes[j];
+        if (a && b && a.distanceTo(b) < 1.15) {
+          positions.push(...a.toArray(), ...b.toArray());
         }
       }
     }

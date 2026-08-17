@@ -24,7 +24,7 @@ export function Contact() {
   const set = (key: keyof Fields, value: string) => {
     const next = { ...fields, [key]: value };
     setFields(next);
-    if (touched[key]) setErrors(validate(next));
+    if (touched[key as string]) setErrors(validate(next));
   };
 
   const blur = (key: keyof Fields) => {
@@ -51,7 +51,7 @@ export function Contact() {
 
   const inputClass = (key: keyof Fields) =>
     `w-full rounded-2xl border bg-white/[0.03] px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none backdrop-blur-xl transition-all focus:border-cyan/50 focus:glow-cyan ${
-      errors[key] && touched[key] ? "border-destructive/60" : "border-glass-border"
+      errors[key] && touched[key as string] ? "border-destructive/60" : "border-glass-border"
     }`;
 
   return (
@@ -78,7 +78,7 @@ export function Contact() {
               placeholder="Your name"
               className={inputClass("name")}
             />
-            {errors.name && touched.name && <p className="mt-1.5 text-xs text-destructive">{errors.name}</p>}
+            {errors.name && touched["name"] && <p className="mt-1.5 text-xs text-destructive">{errors.name}</p>}
           </div>
 
           <div>
@@ -94,7 +94,7 @@ export function Contact() {
               placeholder="you@company.com"
               className={inputClass("email")}
             />
-            {errors.email && touched.email && <p className="mt-1.5 text-xs text-destructive">{errors.email}</p>}
+            {errors.email && touched["email"] && <p className="mt-1.5 text-xs text-destructive">{errors.email}</p>}
           </div>
 
           <div>
@@ -110,7 +110,7 @@ export function Contact() {
               placeholder="What are you building?"
               className={`${inputClass("message")} resize-none`}
             />
-            {errors.message && touched.message && <p className="mt-1.5 text-xs text-destructive">{errors.message}</p>}
+            {errors.message && touched["message"] && <p className="mt-1.5 text-xs text-destructive">{errors.message}</p>}
           </div>
 
           <button

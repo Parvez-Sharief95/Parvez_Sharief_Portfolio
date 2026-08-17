@@ -9,7 +9,7 @@ function useTypewriter(words: string[]) {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const word = words[index % words.length];
+    const word = words[index % words.length] ?? "";
     const done = text === word;
     const delay = deleting ? 35 : done ? 1600 : 70;
     const t = setTimeout(() => {

@@ -12,7 +12,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) return;
+      if (!entries[0]?.isIntersecting) return;
       obs.disconnect();
       const start = performance.now();
       const tick = (t: number) => {
