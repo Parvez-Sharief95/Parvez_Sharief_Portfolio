@@ -12,10 +12,34 @@ export const PROFILE = {
     "Salesforce Developer",
   ],
   metrics: [
-    { label: "Projects Shipped", value: 7, suffix: "+" },
-    { label: "Core AI Domains", value: 6, suffix: "" },
-    { label: "Certifications", value: 4, suffix: "" },
-    { label: "Retrieval Speed Gain", value: 98, suffix: "%" },
+    {
+      label: "Projects Shipped",
+      value: 7,
+      prefix: "",
+      suffix: "+",
+      description: "AI, software engineering, analytics, and Salesforce projects",
+    },
+    {
+      label: "AI Domains",
+      value: 6,
+      prefix: "",
+      suffix: "",
+      description: "GenAI, Agentic AI, RAG, NLP, ML, and AI automation",
+    },
+    {
+      label: "Certifications",
+      value: 4,
+      prefix: "",
+      suffix: "",
+      description: "Salesforce, Agentforce, Python, HTML & CSS certifications",
+    },
+    {
+      label: "Retrieval Time Reduction",
+      value: 99,
+      prefix: "~",
+      suffix: "%",
+      description: "Reduced retrieval time from approximately 50 minutes to 30 seconds",
+    },
   ],
 };
 
@@ -58,7 +82,7 @@ export const PROJECTS: Project[] = [
       "Hybrid RAG pipeline with chunk re-ranking and citation-grounded answers.",
       "HIPAA/GDPR-aware design: tenant isolation, local embeddings, audit trails.",
     ],
-    highlights: ["Enterprise architecture", "RAG at scale", "98% cost reduction"],
+    highlights: ["Enterprise architecture", "RAG at scale", "98% API Cost Reduction"],
     repo: "https://github.com/Parvez-Sharief95",
   },
   {
