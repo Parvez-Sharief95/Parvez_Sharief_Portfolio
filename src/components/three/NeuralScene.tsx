@@ -60,18 +60,22 @@ function NeuralMesh({ quality }: { quality: number }) {
   return (
     <group ref={group}>
       <Icosahedron args={[1.72, quality > 1 ? 3 : 2]}>
-        <meshBasicMaterial color="#22d3ee" wireframe transparent opacity={0.16} />
+        <meshBasicMaterial color="#6b8cd6" wireframe transparent opacity={0.07} />
       </Icosahedron>
       <Icosahedron args={[1.2, 1]}>
-        <meshBasicMaterial color="#a855f7" wireframe transparent opacity={0.14} />
+        <meshBasicMaterial color="#a29ad6" wireframe transparent opacity={0.06} />
       </Icosahedron>
       <lineSegments geometry={linkGeometry}>
-        <lineBasicMaterial color="#38bdf8" transparent opacity={0.24} />
+        <lineBasicMaterial color="#7d97d8" transparent opacity={0.1} />
       </lineSegments>
       {nodes.map((p, i) => (
         <mesh key={i} position={p}>
-          <sphereGeometry args={[0.033, 8, 8]} />
-          <meshBasicMaterial color={i % 5 === 0 ? "#34d399" : i % 3 === 0 ? "#c084fc" : "#67e8f9"} />
+          <sphereGeometry args={[0.026, 8, 8]} />
+          <meshBasicMaterial
+            transparent
+            opacity={0.4}
+            color={i % 3 === 0 ? "#9a92d4" : "#7b95d4"}
+          />
         </mesh>
       ))}
     </group>
@@ -99,7 +103,7 @@ function ParticleField({ count }: { count: number }) {
 
   return (
     <Points ref={ref} positions={positions} stride={3}>
-      <PointMaterial transparent color="#7dd3fc" size={0.035} sizeAttenuation depthWrite={false} opacity={0.7} />
+      <PointMaterial transparent color="#8fa6da" size={0.028} sizeAttenuation depthWrite={false} opacity={0.35} />
     </Points>
   );
 }
@@ -131,11 +135,11 @@ export default function NeuralScene() {
       gl={{ antialias: !lowPower, powerPreference: "high-performance", alpha: true }}
       style={{ pointerEvents: "none" }}
     >
-      <ambientLight intensity={0.6} />
-      <pointLight position={[4, 3, 5]} intensity={30} color="#22d3ee" />
-      <pointLight position={[-5, -2, 3]} intensity={22} color="#a855f7" />
+      <ambientLight intensity={0.8} />
+      <pointLight position={[4, 3, 5]} intensity={18} color="#93b4f5" />
+      <pointLight position={[-5, -2, 3]} intensity={14} color="#b9a8ee" />
       <NeuralMesh quality={quality} />
-      <ParticleField count={lowPower ? 300 : 900} />
+      <ParticleField count={lowPower ? 200 : 600} />
       <ScrollCamera />
     </Canvas>
   );
