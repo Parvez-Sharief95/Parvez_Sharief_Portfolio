@@ -50,8 +50,8 @@ export function Contact() {
   };
 
   const inputClass = (key: keyof Fields) =>
-    `w-full rounded-2xl border bg-white/[0.03] px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none backdrop-blur-xl transition-all focus:border-cyan/50 focus:glow-cyan ${
-      errors[key] && touched[key as string] ? "border-destructive/60" : "border-glass-border"
+    `w-full rounded-2xl border bg-white/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/80 outline-none backdrop-blur-xl transition-all focus:border-primary/40 focus:bg-white/80 ${
+      errors[key] && touched[key as string] ? "border-destructive/60" : "border-border"
     }`;
 
   return (
@@ -67,7 +67,7 @@ export function Contact() {
           noValidate
         >
           <div>
-            <label htmlFor="name" className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-cyan uppercase">
+            <label htmlFor="name" className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-primary uppercase">
               Name
             </label>
             <input
@@ -82,7 +82,7 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email" className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-cyan uppercase">
+            <label htmlFor="email" className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-primary uppercase">
               Email
             </label>
             <input
@@ -98,7 +98,7 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="message" className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-cyan uppercase">
+            <label htmlFor="message" className="mb-2 block font-mono text-[11px] tracking-[0.16em] text-primary uppercase">
               Message
             </label>
             <textarea
@@ -115,7 +115,7 @@ export function Contact() {
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 rounded-full border border-glass-border bg-cyan/15 px-6 py-3 text-sm font-medium text-cyan transition-all hover:bg-cyan/25 hover:glow-cyan"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/12 px-6 py-3 text-sm font-medium text-primary transition-all hover:-translate-y-0.5 hover:bg-primary/18"
           >
             Send message <Send className="h-4 w-4" />
           </button>
@@ -139,12 +139,12 @@ export function Contact() {
               href={c.href}
               target={c.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noreferrer"
-              className="glass flex items-center gap-4 rounded-2xl p-5 transition-all hover:-translate-y-0.5 hover:glow-cyan"
+              className="glass gloss card-lift flex items-center gap-4 rounded-2xl p-5"
             >
-              <span className="glass-soft rounded-full p-2.5">
-                <c.icon className="h-4 w-4 text-cyan" />
+              <span className="glass-soft relative z-10 rounded-full p-2.5">
+                <c.icon className="h-4 w-4 text-primary" />
               </span>
-              <span>
+              <span className="relative z-10">
                 <span className="block font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">{c.label}</span>
                 <span className="block text-sm text-foreground">{c.value}</span>
               </span>
@@ -164,13 +164,13 @@ export function Footer() {
           © {new Date().getFullYear()} {PROFILE.name} · {PROFILE.role}
         </p>
         <div className="flex items-center gap-3">
-          <a href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-cyan">
+          <a href={PROFILE.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary">
             <Github className="h-4 w-4" />
           </a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-cyan">
+          <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary">
             <Linkedin className="h-4 w-4" />
           </a>
-          <a href={`mailto:${PROFILE.email}`} aria-label="Email" className="text-muted-foreground hover:text-cyan">
+          <a href={`mailto:${PROFILE.email}`} aria-label="Email" className="text-muted-foreground hover:text-primary">
             <Mail className="h-4 w-4" />
           </a>
         </div>
