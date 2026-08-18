@@ -51,7 +51,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass gloss card-lift rounded-3xl p-7 lg:col-span-3"
+          className="glass gloss card-lift self-start rounded-3xl p-7 lg:col-span-3"
         >
           <p className="relative z-10 text-sm leading-relaxed text-muted-foreground">
             I&apos;m a B.Tech graduate in Artificial Intelligence &amp; Machine Learning from Aditya College of
