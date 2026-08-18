@@ -22,10 +22,10 @@ export function Section({
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="glass inline-flex rounded-full px-3.5 py-1 font-mono text-[11px] tracking-[0.18em] text-cyan uppercase">
+          <span className="glass inline-flex rounded-full px-3.5 py-1 font-mono text-[11px] tracking-[0.18em] text-primary uppercase">
             {eyebrow}
           </span>
-          <h2 className="mt-5 font-display text-3xl font-semibold sm:text-4xl">{title}</h2>
+          <h2 className="mt-5 font-display text-3xl font-semibold text-foreground sm:text-4xl">{title}</h2>
         </motion.div>
         {children}
       </div>
