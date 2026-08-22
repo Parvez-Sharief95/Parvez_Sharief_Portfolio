@@ -4,9 +4,10 @@ import { Github, Linkedin, Mail, Send, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { PROFILE } from "@/data/portfolio";
 import { Section } from "./Section";
-import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 type Fields = { name: string; email: string; message: string };
+
+const RESUME_URL = "/Parvez_Sharief_Resume.pdf";
 
 const validate = (f: Fields) => {
   const e: Partial<Fields> = {};
@@ -132,7 +133,7 @@ export function Contact() {
             { icon: Mail, label: "Email", value: PROFILE.email, href: `mailto:${PROFILE.email}` },
             { icon: Github, label: "GitHub", value: "Parvez-Sharief95", href: PROFILE.github },
             { icon: Linkedin, label: "LinkedIn", value: "parvez-sharief", href: PROFILE.linkedin },
-            { icon: FileText, label: "Resume", value: "Download PDF", href: resumeAsset.url },
+            { icon: FileText, label: "Resume", value: "Download PDF", href: RESUME_URL },
           ].map((c) => (
             <a
               key={c.label}

@@ -258,7 +258,7 @@ export const TIMELINE: TimelineItem[] = [
   },
   {
     period: "Jun 2024 – Jul 2024",
-    title: "Salesforce Administrator & Developer Intern",
+    title: "Software Developer Intern",
     org: "Technical Hub Pvt Ltd",
     kind: "work",
     points: [

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, FileText, Menu, X } from "lucide-react";
 import { PROFILE } from "@/data/portfolio";
-import resumeAsset from "@/assets/resume.pdf.asset.json";
+
+const RESUME_URL = "/Parvez_Sharief_Resume.pdf";
 
 const LINKS = [
   { label: "About", href: "#about" },
@@ -62,7 +63,7 @@ export function Header() {
           ))}
         </div>
 
-          <div className="relative z-10 ml-auto flex items-center gap-1.5 md:ml-0">
+        <div className="relative z-10 ml-auto flex items-center gap-1.5 md:ml-0">
           <a
             href={PROFILE.github}
             target="_blank"
@@ -82,7 +83,7 @@ export function Header() {
             <Linkedin className="h-4 w-4" />
           </a>
           <a
-            href={resumeAsset.url}
+            href={RESUME_URL}
             target="_blank"
             rel="noreferrer"
             className="hidden items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1.5 text-sm font-medium text-primary transition-all hover:bg-primary/16 sm:inline-flex"
@@ -115,6 +116,15 @@ export function Header() {
               {l.label}
             </a>
           ))}
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+            className="mt-1 flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm text-primary transition-colors hover:bg-primary/8"
+          >
+            <FileText className="h-4 w-4" /> Resume
+          </a>
         </motion.div>
       )}
     </motion.header>
